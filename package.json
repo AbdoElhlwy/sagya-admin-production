@@ -9,14 +9,19 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "set CI=false && react-scripts build",
-    "test": "react-scripts test"
+    "build": "CI=false react-scripts build",
+    "test": "react-scripts test",
+    "lint": "react-scripts lint"
   },
   "eslintConfig": {
-    "extends": ["react-app"]
+    "extends": ["react-app"],
+    "rules": {
+      "no-unused-vars": "warn",
+      "react-hooks/exhaustive-deps": "warn"
+    }
   },
   "browserslist": {
-    "production": [">0.2%", "not dead"],
-    "development": ["last 1 chrome version"]
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
   }
 }
